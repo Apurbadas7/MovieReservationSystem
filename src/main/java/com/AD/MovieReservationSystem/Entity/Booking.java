@@ -6,6 +6,7 @@ import lombok.Data;
 import lombok.NoArgsConstructor;
 
 import java.sql.Timestamp;
+import java.time.LocalDateTime;
 import java.util.Date;
 import java.util.List;
 @Entity
@@ -16,19 +17,14 @@ public class Booking {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
-    private Timestamp bookingDate;
 
-
-    @OneToMany
-    private List<Seat> seats;
+    private LocalDateTime bookingDate; // Fixed
 
     @ManyToOne
+    @JoinColumn(name = "user_id")
     private User user;
 
     @ManyToOne
     @JoinColumn(name = "showtime_id")
-    private Showtime showTime;
-
-
-
+    private Showtime showtime;
 }

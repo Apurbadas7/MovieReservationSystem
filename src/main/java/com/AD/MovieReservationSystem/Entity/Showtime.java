@@ -24,7 +24,7 @@ public class Showtime {
     private int availableSeat;
     private int screenNumber;
 
-    @OneToMany(mappedBy = "showTime")
+    @OneToMany(mappedBy = "showtime")
     private List<Booking> bookingList;
 
     @ManyToOne

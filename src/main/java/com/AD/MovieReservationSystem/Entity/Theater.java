@@ -21,9 +21,9 @@ public class Theater {
     private String location;
     private int totalScreen;
 
-    @OneToMany
+    @OneToMany(mappedBy = "theater")
     private List<Showtime> showtime;
 
-    @OneToMany
+    @OneToMany(mappedBy = "theater")
     private List<Seat> seat;
 }
